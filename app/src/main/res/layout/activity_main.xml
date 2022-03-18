@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:customfontdemo="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:customfontdemo="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity"
-    android:background="@drawable/gradient_background">
+    android:background="@drawable/gradient_background"
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -40,34 +40,34 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
         android:text="actio."
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/ativMobile"
         android:layout_width="367dp"
         android:layout_height="130dp"
-        android:layout_marginTop="40dp"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/poppins_extrabold"
         android:text="Atividade Mobile."
         android:textColor="@color/white"
         android:textSize="43dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2"/>
+        app:layout_constraintTop_toBottomOf="@id/textView2" />
 
     <io.alterac.blurkit.BlurLayout
         android:id="@+id/blurLayout"
         android:layout_width="304dp"
         android:layout_height="124dp"
+        android:layout_marginTop="30dp"
         app:blk_blurRadius="8"
         app:blk_fps="0"
-        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/blurLayout1" />
@@ -76,9 +76,9 @@
         android:id="@+id/blurLayout1"
         android:layout_width="304dp"
         android:layout_height="124dp"
+        android:layout_margin="30dp"
         app:blk_blurRadius="8"
         app:blk_fps="0"
-        android:layout_margin="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ativMobile" />
@@ -116,4 +116,70 @@
         app:strokeWidth="2dp">
     </com.google.android.material.card.MaterialCardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_arrow_1"
+        app:layout_constraintBottom_toBottomOf="@+id/blurLayout1"
+        app:layout_constraintEnd_toEndOf="@+id/blurLayout1"
+        app:layout_constraintTop_toTopOf="@+id/blurLayout1" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_arrow_1"
+        app:layout_constraintBottom_toBottomOf="@+id/blurLayout"
+        app:layout_constraintEnd_toEndOf="@+id/blurLayout"
+        app:layout_constraintTop_toTopOf="@+id/blurLayout" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="30dp"
+        android:textStyle="bold"
+        android:text="Kauê Granado"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/blurLayout1"
+        app:layout_constraintStart_toStartOf="@+id/blurLayout1" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="30dp"
+        android:textStyle="bold"
+        android:text="Pedro Grandizoli"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/blurLayout"
+        app:layout_constraintStart_toStartOf="@+id/blurLayout" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="20dp"
+        android:text="Estudante"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/blurLayout1"
+        app:layout_constraintStart_toStartOf="@+id/blurLayout1"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="20dp"
+        android:text="Estudante"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/blurLayout"
+        app:layout_constraintStart_toStartOf="@+id/blurLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
