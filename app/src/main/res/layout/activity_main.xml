@@ -271,4 +271,14 @@
         app:layout_constraintStart_toStartOf="@+id/blurLayout1"
         app:layout_constraintTop_toTopOf="@+id/blurLayout1" />
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/img_danilo"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/blurLayout2"
+        app:layout_constraintTop_toTopOf="@+id/blurLayout2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

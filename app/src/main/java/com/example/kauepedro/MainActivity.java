@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intentPedro = new Intent(this, PedroActivity.class);
         Intent intentKaue = new Intent(this, KaueActivity.class);
+        Intent intentDanilo = new Intent(this, DaniloActivity.class);
 
         MaterialCardView pedroButton = findViewById(R.id.card1);
 
@@ -37,6 +38,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(intentKaue);
+            }
+        });
+
+        MaterialCardView daniloButton = findViewById(R.id.card3);
+
+        daniloButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intentDanilo);
             }
         });
 
