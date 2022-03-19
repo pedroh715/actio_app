@@ -25,15 +25,14 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, KaueActivity.class);
 
-        MaterialCardView kaueButton = findViewById(R.id.card1);
+        MaterialCardView pedroButton = findViewById(R.id.card1);
 
-        kaueButton.setOnClickListener(new View.OnClickListener() {
+        pedroButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(intent);
             }
         });
-
         blurLayout = findViewById(R.id.blurLayout);
     }
 }
