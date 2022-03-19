@@ -1,14 +1,10 @@
 package com.example.kauepedro;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 
 import com.google.android.material.card.MaterialCardView;
 
@@ -23,16 +19,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(this, KaueActivity.class);
+        Intent intentPedro = new Intent(this, PedroActivity.class);
+        Intent intentKaue = new Intent(this, KaueActivity.class);
 
         MaterialCardView pedroButton = findViewById(R.id.card1);
 
         pedroButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(intent);
+                startActivity(intentPedro);
             }
         });
+
+        MaterialCardView kaueButton = findViewById(R.id.card2);
+
+        kaueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intentKaue);
+            }
+        });
+
         blurLayout = findViewById(R.id.blurLayout);
     }
 }
