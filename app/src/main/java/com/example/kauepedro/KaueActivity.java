@@ -9,15 +9,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.ToggleButton;
 
 public class KaueActivity extends AppCompatActivity {
 
-   // MediaPlayer mediaPlayer;
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kaue);
+        setSoundState();
+        playSound();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -32,9 +35,27 @@ public class KaueActivity extends AppCompatActivity {
         arrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // mediaPlayer.stop();
+                mediaPlayer.stop();
                 finish();
             }
         });
+    }
+
+    private void setSoundState(){
+        ToggleButton button = findViewById(R.id.button_sound);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!button.isChecked()){
+                    mediaPlayer.setVolume(0,0);
+                } else mediaPlayer.setVolume(1, 1);
+
+            }
+        });
+    }
+
+    private void playSound() {
+        mediaPlayer = MediaPlayer.create(this, R.raw.sound_test);
+        mediaPlayer.start();
     }
 }

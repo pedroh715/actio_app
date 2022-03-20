@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.ToggleButton;
 
 public class PedroActivity extends AppCompatActivity {
 
@@ -20,6 +21,7 @@ public class PedroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedro);
         playSound();
+        setSoundState();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -40,6 +42,18 @@ public class PedroActivity extends AppCompatActivity {
         });
     }
 
+    private void setSoundState(){
+        ToggleButton button = findViewById(R.id.button_sound);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!button.isChecked()){
+                    mediaPlayer.setVolume(0,0);
+                } else mediaPlayer.setVolume(1, 1);
+            }
+        });
+    }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -48,7 +62,7 @@ public class PedroActivity extends AppCompatActivity {
     }
 
     private void playSound() {
-         mediaPlayer = MediaPlayer.create(this, R.raw.sound_test);
+         mediaPlayer = MediaPlayer.create(this, R.raw.moda_casual);
          mediaPlayer.start();
     }
 }
