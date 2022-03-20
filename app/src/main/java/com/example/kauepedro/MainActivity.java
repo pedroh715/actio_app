@@ -16,6 +16,7 @@ import io.alterac.blurkit.BlurLayout;
 public class MainActivity extends AppCompatActivity {
 
     private BlurLayout blurLayout;
+    private MaterialCardView pedroButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intentKaue = new Intent(this, KaueActivity.class);
         Intent intentDanilo = new Intent(this, DaniloActivity.class);
 
-        MaterialCardView pedroButton = findViewById(R.id.card1);
+        pedroButton = findViewById(R.id.card1);
 
         pedroButton.setOnClickListener(new View.OnClickListener() {
             @Override
