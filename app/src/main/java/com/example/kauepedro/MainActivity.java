@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(intentPedro);
-                finish();
             }
         });
 
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(intentKaue);
-                finish();
             }
         });
 
@@ -61,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(intentDanilo);
-                finish();
             }
         });
 
