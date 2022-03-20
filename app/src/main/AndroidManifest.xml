@@ -13,6 +13,9 @@
             android:name=".KaueActivity"
             android:exported="false" />
         <activity
+            android:name=".DaniloActivity"
+            android:exported="false" />
+        <activity
             android:name=".PedroActivity"
             android:exported="false" />
         <activity android:name=".MainActivity" >

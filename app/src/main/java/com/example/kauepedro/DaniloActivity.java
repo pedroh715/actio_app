@@ -3,17 +3,26 @@ package com.example.kauepedro;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class DaniloActivity extends AppCompatActivity {
+
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_danilo);
+        setSoundState();
+        playSound();
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -22,5 +31,33 @@ public class DaniloActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
+
+        ImageView arrowBack = findViewById(R.id.arrowback);
+
+        arrowBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.stop();
+                finish();
+            }
+        });
+    }
+
+    private void setSoundState(){
+        ToggleButton button = findViewById(R.id.button_sound);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!button.isChecked()){
+                    mediaPlayer.setVolume(0,0);
+                } else mediaPlayer.setVolume(1, 1);
+
+            }
+        });
+    }
+
+    private void playSound() {
+        mediaPlayer = MediaPlayer.create(this, R.raw.sound_test);
+        mediaPlayer.start();
     }
 }
