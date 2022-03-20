@@ -54,6 +54,13 @@ public class KaueActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mediaPlayer.stop();
+        finish();
+    }
+
     private void playSound() {
         mediaPlayer = MediaPlayer.create(this, R.raw.sound_test);
         mediaPlayer.start();

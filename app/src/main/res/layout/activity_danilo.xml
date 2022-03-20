@@ -85,6 +85,32 @@
     </com.google.android.material.card.MaterialCardView>
 
     <io.alterac.blurkit.BlurLayout
+        android:id="@+id/blurLayout2"
+        android:layout_width="93dp"
+        android:layout_height="200dp"
+        app:blk_blurRadius="8"
+        app:blk_fps="0"
+        app:layout_constraintBottom_toBottomOf="@+id/githubDanilo"
+        app:layout_constraintEnd_toEndOf="@+id/githubDanilo"
+        app:layout_constraintStart_toStartOf="@+id/githubDanilo" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/githubDanilo"
+        android:layout_width="93dp"
+        android:layout_height="200dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/blurLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/materialCardView"
+        app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
+
+    <io.alterac.blurkit.BlurLayout
         android:id="@+id/blurLayout"
         android:layout_width="310dp"
         android:layout_height="250dp"
@@ -101,6 +127,7 @@
         android:layout_marginTop="20dp"
         app:cardBackgroundColor="@color/transparent"
         app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialCardView"

@@ -2,15 +2,20 @@ package com.example.kauepedro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.google.android.material.card.MaterialCardView;
 
 public class DaniloActivity extends AppCompatActivity {
 
@@ -40,6 +45,30 @@ public class DaniloActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+
+        MaterialCardView daniloGithub = findViewById(R.id.githubDanilo);
+
+        daniloGithub.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Uri uri = Uri.parse("https://github.com/Danilo-Mota");
+                Intent btnDanilo = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(btnDanilo);
+
+            }
+        });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mediaPlayer.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mediaPlayer.start();
     }
 
     private void setSoundState(){
