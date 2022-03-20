@@ -1,293 +1,301 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:customfontdemo="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="122dp"
-        android:layout_height="201dp"
-        android:layout_marginTop="124dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        customfontdemo:srcCompat="@drawable/ic_purple_elipse_homepage" />
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:customfontdemo="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background"
+        tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ativMobile"
-        customfontdemo:srcCompat="@drawable/ic_yellow_elipse_homepage" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="122dp"
+            android:layout_height="201dp"
+            android:layout_marginTop="124dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            customfontdemo:srcCompat="@drawable/ic_purple_elipse_homepage" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        customfontdemo:srcCompat="@drawable/ic_blue_elipse_homepage" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ativMobile"
+            customfontdemo:srcCompat="@drawable/ic_yellow_elipse_homepage" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="40dp"
-        android:text="actio."
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="168dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            customfontdemo:srcCompat="@drawable/ic_blue_elipse_homepage" />
 
-    <TextView
-        android:id="@+id/ativMobile"
-        android:layout_width="367dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/poppins_extrabold"
-        android:text="Atividade Mobile."
-        android:textColor="@color/white"
-        android:textSize="43dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:text="actio."
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <io.alterac.blurkit.BlurLayout
-        android:id="@+id/blurLayout"
-        android:layout_width="304dp"
-        android:layout_height="124dp"
-        android:layout_marginTop="30dp"
-        app:blk_blurRadius="8"
-        app:blk_fps="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blurLayout1" />
+        <TextView
+            android:id="@+id/ativMobile"
+            android:layout_width="367dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/poppins_extrabold"
+            android:text="Atividade Mobile."
+            android:textColor="@color/white"
+            android:textSize="43dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView2" />
 
-    <io.alterac.blurkit.BlurLayout
-        android:id="@+id/blurLayout1"
-        android:layout_width="304dp"
-        android:layout_height="124dp"
-        android:layout_margin="30dp"
-        app:blk_blurRadius="8"
-        app:blk_fps="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ativMobile" />
+        <io.alterac.blurkit.BlurLayout
+            android:id="@+id/blurLayout"
+            android:layout_width="304dp"
+            android:layout_height="124dp"
+            android:layout_marginTop="30dp"
+            app:blk_blurRadius="8"
+            app:blk_fps="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/blurLayout1" />
 
-    <io.alterac.blurkit.BlurLayout
-        android:id="@+id/blurLayout2"
-        android:layout_width="304dp"
-        android:layout_height="124dp"
-        android:layout_margin="30dp"
-        app:blk_blurRadius="8"
-        app:blk_fps="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blurLayout" />
+        <io.alterac.blurkit.BlurLayout
+            android:id="@+id/blurLayout1"
+            android:layout_width="304dp"
+            android:layout_height="124dp"
+            android:layout_margin="30dp"
+            app:blk_blurRadius="8"
+            app:blk_fps="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ativMobile" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card2"
-        android:layout_width="304dp"
-        android:layout_height="124dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardBackgroundColor="@color/transparent"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/blurLayout1"
-        app:layout_constraintEnd_toEndOf="@+id/blurLayout1"
-        app:layout_constraintStart_toStartOf="@+id/blurLayout1"
-        app:layout_constraintTop_toTopOf="@+id/blurLayout1"
-        app:strokeColor="@color/white"
-        app:strokeWidth="1dp" />
+        <io.alterac.blurkit.BlurLayout
+            android:id="@+id/blurLayout2"
+            android:layout_width="304dp"
+            android:layout_height="124dp"
+            android:layout_margin="30dp"
+            app:blk_blurRadius="8"
+            app:blk_fps="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/blurLayout" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card3"
-        android:layout_width="304dp"
-        android:layout_height="124dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardBackgroundColor="@color/transparent"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/blurLayout2"
-        app:layout_constraintEnd_toEndOf="@+id/blurLayout2"
-        app:layout_constraintStart_toStartOf="@+id/blurLayout2"
-        app:layout_constraintTop_toTopOf="@+id/blurLayout2"
-        app:strokeColor="@color/white"
-        app:strokeWidth="1dp" />
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card2"
+            android:layout_width="304dp"
+            android:layout_height="124dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout1"
+            app:layout_constraintEnd_toEndOf="@+id/blurLayout1"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout1"
+            app:layout_constraintTop_toTopOf="@+id/blurLayout1"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card3"
+            android:layout_width="304dp"
+            android:layout_height="124dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/blurLayout2"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout2"
+            app:layout_constraintTop_toTopOf="@+id/blurLayout2"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp" />
 
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card1"
-        android:layout_width="304dp"
-        android:layout_height="124dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardBackgroundColor="@color/transparent"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/blurLayout"
-        app:layout_constraintEnd_toEndOf="@+id/blurLayout"
-        app:layout_constraintStart_toStartOf="@+id/blurLayout"
-        app:layout_constraintTop_toTopOf="@+id/blurLayout"
-        app:strokeColor="@color/white"
-        app:strokeWidth="1dp">
-    </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card1"
+            android:layout_width="304dp"
+            android:layout_height="124dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout"
+            app:layout_constraintEnd_toEndOf="@+id/blurLayout"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout"
+            app:layout_constraintTop_toTopOf="@+id/blurLayout"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp">
+        </com.google.android.material.card.MaterialCardView>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_arrow_1"
-        app:layout_constraintBottom_toBottomOf="@+id/blurLayout1"
-        app:layout_constraintEnd_toEndOf="@+id/blurLayout1"
-        app:layout_constraintTop_toTopOf="@+id/blurLayout1" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_arrow_1"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout1"
+            app:layout_constraintEnd_toEndOf="@+id/blurLayout1"
+            app:layout_constraintTop_toTopOf="@+id/blurLayout1" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_arrow_1"
-        app:layout_constraintBottom_toBottomOf="@+id/blurLayout"
-        app:layout_constraintEnd_toEndOf="@+id/blurLayout"
-        app:layout_constraintTop_toTopOf="@+id/blurLayout" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_arrow_1"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout"
+            app:layout_constraintEnd_toEndOf="@+id/blurLayout"
+            app:layout_constraintTop_toTopOf="@+id/blurLayout" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_arrow_1"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/blurLayout2"
-        app:layout_constraintEnd_toEndOf="@+id/blurLayout2"
-        app:layout_constraintTop_toTopOf="@+id/blurLayout2" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_1"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/blurLayout2"
+            app:layout_constraintTop_toTopOf="@+id/blurLayout2" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="30dp"
-        android:fontFamily="@font/poppins_extrabold"
-        android:text="Kauê Granado"
-        android:textSize="17sp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/blurLayout1"
-        app:layout_constraintStart_toStartOf="@+id/blurLayout1" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/poppins_extrabold"
+            android:text="Kauê Granado"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout1"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout1" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="30dp"
-        android:textSize="17sp"
-        android:fontFamily="@font/poppins_extrabold"
-        android:text="Pedro Grandizoli"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/blurLayout"
-        app:layout_constraintStart_toStartOf="@+id/blurLayout" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginBottom="30dp"
+            android:textSize="17sp"
+            android:fontFamily="@font/poppins_extrabold"
+            android:text="Pedro Grandizoli"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="30dp"
-        android:textSize="17sp"
-        android:fontFamily="@font/poppins_extrabold"
-        android:text="Danilo Mota"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/blurLayout2"
-        app:layout_constraintStart_toStartOf="@+id/blurLayout2" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginBottom="30dp"
+            android:textSize="17sp"
+            android:fontFamily="@font/poppins_extrabold"
+            android:text="Danilo Mota"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout2"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout2" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="20dp"
-        android:text="Estudante"
-        android:textColor="@color/white"
-        android:fontFamily="@font/poppins_semibold"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/blurLayout1"
-        app:layout_constraintStart_toStartOf="@+id/blurLayout1"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginBottom="20dp"
+            android:text="Estudante"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout1"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout1"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Estudante"
-        android:textColor="@color/white"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/blurLayout"
-        app:layout_constraintStart_toStartOf="@+id/blurLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Estudante"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Estudante"
-        android:textColor="@color/white"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/blurLayout2"
-        app:layout_constraintStart_toStartOf="@+id/blurLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"/>
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Estudante"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout2"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"/>
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="10dp"
-        app:civ_border_width="1dp"
-        app:civ_border_color="@color/white"
-        android:src="@drawable/img_pedro"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintStart_toStartOf="@+id/blurLayout"
-        app:layout_constraintTop_toTopOf="@+id/blurLayout" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="10dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/white"
+            android:src="@drawable/img_pedro"
+            app:layout_constraintBottom_toTopOf="@+id/textView3"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout"
+            app:layout_constraintTop_toTopOf="@+id/blurLayout" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="10dp"
-        app:civ_border_width="1dp"
-        app:civ_border_color="@color/white"
-        android:src="@drawable/img_kaue"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/blurLayout1"
-        app:layout_constraintTop_toTopOf="@+id/blurLayout1" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="10dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/white"
+            android:src="@drawable/img_kaue"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout1"
+            app:layout_constraintTop_toTopOf="@+id/blurLayout1" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="10dp"
-        app:civ_border_width="1dp"
-        app:civ_border_color="@color/white"
-        android:src="@drawable/img_danilo"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintStart_toStartOf="@+id/blurLayout2"
-        app:layout_constraintTop_toTopOf="@+id/blurLayout2" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="10dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/white"
+            android:src="@drawable/img_danilo"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout2"
+            app:layout_constraintTop_toTopOf="@+id/blurLayout2" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

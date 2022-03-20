@@ -52,8 +52,8 @@ public class DaniloActivity extends AppCompatActivity {
         daniloGithub.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Uri uri = Uri.parse("https://github.com/Danilo-Mota");
-                Intent btnDanilo = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(btnDanilo);
+                Intent intentDanilo = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intentDanilo);
 
             }
         });

@@ -2,14 +2,18 @@ package com.example.kauepedro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
+
+import com.google.android.material.card.MaterialCardView;
 
 public class KaueActivity extends AppCompatActivity {
 
@@ -39,6 +43,29 @@ public class KaueActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        MaterialCardView linkKaue = findViewById(R.id.kaueLink);
+
+        linkKaue.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Uri uri = Uri.parse("https://github.com/kauegran");
+                Intent intentKaue = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intentKaue);
+
+            }
+        });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mediaPlayer.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mediaPlayer.start();
     }
 
     private void setSoundState(){
