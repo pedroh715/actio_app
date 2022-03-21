@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:fillViewport="true"
+    android:scrollbars="none"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".PedroActivity"
@@ -75,12 +76,13 @@
             android:id="@+id/materialCardView"
             android:layout_width="220dp"
             android:layout_height="220dp"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="30dp"
             app:cardBackgroundColor="@color/transparent"
             app:cardElevation="0dp"
-            android:layout_marginTop="5dp"
             app:cardCornerRadius="15dp"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/materialCardView2"
+            app:layout_constraintEnd_toStartOf="@id/blurLayout2"
             app:layout_constraintTop_toBottomOf="@+id/textView8">
 
             <ImageView
@@ -100,6 +102,15 @@
             app:layout_constraintEnd_toEndOf="@+id/pedroLink"
             app:layout_constraintStart_toStartOf="@+id/pedroLink" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_github_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/blurLayout2"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout2"
+            app:layout_constraintTop_toTopOf="@+id/blurLayout2" />
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/pedroLink"
             android:layout_width="93dp"
@@ -107,13 +118,13 @@
             android:layout_marginEnd="40dp"
             android:clickable="true"
             android:focusable="true"
-            android:layout_marginBottom="27dp"
             app:cardBackgroundColor="@color/transparent"
             app:cardCornerRadius="15dp"
             app:cardElevation="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/blurLayout"
+            app:layout_constraintBottom_toTopOf="@+id/materialCardView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/materialCardView"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
             app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
 
         <io.alterac.blurkit.BlurLayout
@@ -130,15 +141,15 @@
             android:id="@+id/materialCardView2"
             android:layout_width="310dp"
             android:layout_height="250dp"
-            android:layout_marginTop="20dp"
-            app:cardElevation="0dp"
+            android:layout_marginBottom="20dp"
             app:cardBackgroundColor="@color/transparent"
             app:cardCornerRadius="15dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/materialCardView"
-            app:strokeWidth="1dp">
-        </com.google.android.material.card.MaterialCardView>
+            app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
 
         <ToggleButton
             android:id="@+id/button_sound"
