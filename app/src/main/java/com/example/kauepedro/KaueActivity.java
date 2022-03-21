@@ -89,7 +89,8 @@ public class KaueActivity extends AppCompatActivity {
     }
 
     private void playSound() {
-        mediaPlayer = MediaPlayer.create(this, R.raw.sound_test);
+        mediaPlayer = MediaPlayer.create(this, R.raw.musica_kaue);
+        mediaPlayer.seekTo(15800);
         mediaPlayer.start();
     }
 }

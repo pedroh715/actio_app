@@ -88,6 +88,7 @@ public class PedroActivity extends AppCompatActivity {
 
     private void playSound() {
          mediaPlayer = MediaPlayer.create(this, R.raw.moda_casual);
+         mediaPlayer.seekTo(14000);
          mediaPlayer.start();
     }
 }
