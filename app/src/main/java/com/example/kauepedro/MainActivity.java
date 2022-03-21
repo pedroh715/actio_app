@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -63,5 +64,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
         blurLayout = findViewById(R.id.blurLayout);
+
+        MaterialCardView projectGithub = findViewById(R.id.cardGithub);
+
+        projectGithub.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Uri uri = Uri.parse("https://github.com/pedroh715/actio_app");
+                Intent i = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(i);
+
+            }
+        });
     }
 }
