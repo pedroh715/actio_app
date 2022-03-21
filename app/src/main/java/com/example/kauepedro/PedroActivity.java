@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
+
+import com.google.android.material.card.MaterialCardView;
 
 public class PedroActivity extends AppCompatActivity {
 
@@ -40,6 +43,28 @@ public class PedroActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        MaterialCardView linkPedro = findViewById(R.id.pedroLink);
+
+        linkPedro.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Uri uri = Uri.parse("https://github.com/pedroh715");
+                Intent intentPedro = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intentPedro);
+            }
+        });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mediaPlayer.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mediaPlayer.start();
     }
 
     private void setSoundState(){

@@ -96,12 +96,12 @@
             android:layout_height="200dp"
             app:blk_blurRadius="8"
             app:blk_fps="0"
-            app:layout_constraintBottom_toBottomOf="@+id/kaueLink"
-            app:layout_constraintEnd_toEndOf="@+id/kaueLink"
-            app:layout_constraintStart_toStartOf="@+id/kaueLink" />
+            app:layout_constraintBottom_toBottomOf="@+id/pedroLink"
+            app:layout_constraintEnd_toEndOf="@+id/pedroLink"
+            app:layout_constraintStart_toStartOf="@+id/pedroLink" />
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/kaueLink"
+            android:id="@+id/pedroLink"
             android:layout_width="93dp"
             android:layout_height="200dp"
             android:layout_marginEnd="40dp"
