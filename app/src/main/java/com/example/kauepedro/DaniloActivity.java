@@ -93,7 +93,7 @@ public class DaniloActivity extends AppCompatActivity {
 
     private void playSound() {
         mediaPlayer = MediaPlayer.create(this, R.raw.musica_danilo);
-        mediaPlayer.seekTo(31100);
+        mediaPlayer.seekTo(30900);
         mediaPlayer.start();
 
     }

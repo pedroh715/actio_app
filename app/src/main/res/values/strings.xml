@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Actio</string>
+    <string name="pedro_bio">Meu nome é Pedro Henrique Grandizoli, tenho 17 anos e sou top 2 front-end da minha rua provavelmente não vou terminar o técnico em informática porque tenho o QI meio abaixo da média pra isso. Porém, quebrando todas as regras da vida, tenho vontade de seguir na área e fazer faculdade de Engenharia de Software. Ainda não decidi em que área da programação quero seguir como desenvolvedor, mobile, front-end, back-end, etc. Porém gosto de programar então qualquer coisa vale.</string>
+    <string name="danilo_bio">Meu nome é Danilo Mota Filho, tenho 17 anos e faço estágio como desenvolvedor mobile na Jera, estou no sétimo semestre do curso integrado em informática, pretendo seguir na área e também cursar a faculdade de Engenharia de Software. Além disso sou o top 1 pescador de Coxim e top 1 br no Clash Royale.</string>
+
 </resources>

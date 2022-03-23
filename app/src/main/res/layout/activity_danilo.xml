@@ -125,7 +125,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/materialCardView"
             app:layout_constraintTop_toBottomOf="@+id/textView8"
-            app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
+            app:strokeWidth="1dp">
+        </com.google.android.material.card.MaterialCardView>
 
         <io.alterac.blurkit.BlurLayout
             android:id="@+id/blurLayout"
@@ -149,7 +150,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/materialCardView"
-            app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
+            app:strokeWidth="1dp">
+        </com.google.android.material.card.MaterialCardView>
 
         <ToggleButton
             android:id="@+id/button_sound"
@@ -163,5 +165,18 @@
             android:layout_marginTop="70dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="230dp"
+            android:text="@string/danilo_bio"
+            android:textSize="12sp"
+            android:gravity=""
+            android:textColor="@color/white"
+            android:justificationMode="inter_word"
+            app:layout_constraintBottom_toBottomOf="@id/blurLayout"
+            app:layout_constraintEnd_toEndOf="@id/blurLayout"
+            app:layout_constraintStart_toStartOf="@id/blurLayout"
+            app:layout_constraintTop_toTopOf="@id/blurLayout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
