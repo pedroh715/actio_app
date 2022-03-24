@@ -141,7 +141,7 @@
             android:layout_width="310dp"
             android:layout_height="250dp"
             android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="@color/transparent"
+            app:cardBackgroundColor="@color/black_transparent"
             app:cardCornerRadius="15dp"
             app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"

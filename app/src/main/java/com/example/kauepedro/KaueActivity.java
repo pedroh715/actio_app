@@ -18,8 +18,10 @@ import android.widget.ToggleButton;
 import com.google.android.material.card.MaterialCardView;
 
 public class KaueActivity extends AppCompatActivity {
-    MaterialCardView fotoKaue;
+    Animation imgAnim, arrowAnim;
+    MaterialCardView fotoKaue, linkKaue;
     MediaPlayer mediaPlayer;
+    ImageView arrowBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +30,8 @@ public class KaueActivity extends AppCompatActivity {
         setSoundState();
         playSound();
 
-        Animation imgAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
-        Animation arrowAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.arrow_anim);
+        imgAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
+        arrowAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.arrow_anim);
         fotoKaue = findViewById(R.id.materialCardView);
 
         fotoKaue.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +49,7 @@ public class KaueActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
 
-        ImageView arrowBack = findViewById(R.id.arrow_back);
+        arrowBack = findViewById(R.id.arrow_back);
 
         arrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +60,7 @@ public class KaueActivity extends AppCompatActivity {
             }
         });
 
-        MaterialCardView linkKaue = findViewById(R.id.kaueLink);
+        linkKaue = findViewById(R.id.kaueLink);
 
         linkKaue.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

@@ -23,59 +23,61 @@ import io.alterac.blurkit.BlurLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView actioLogo, ativMobile;
+    private TextView actioLogo, ativMobile;
     private BlurLayout blurLayout;
-    private MaterialCardView pedroButton;
+    private MaterialCardView pedroBtn, kaueBtn, daniloBtn, projectGithub;
+    private Intent intentPedro, intentKaue, intentDanilo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        actioLogo = findViewById(R.id.textView2);
-        ativMobile = findViewById(R.id.ativMobile);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
-
-        Intent intentPedro = new Intent(this, PedroActivity.class);
-        Intent intentKaue = new Intent(this, KaueActivity.class);
-        Intent intentDanilo = new Intent(this, DaniloActivity.class);
-
-        pedroButton = findViewById(R.id.card1);
-
-        pedroButton.setOnClickListener(new View.OnClickListener() {
+        setUI();
+        setFindView();
+        setIntent();
+        setOnClicks();
+    }
+    protected void setFindView() {
+        pedroBtn = findViewById(R.id.card1);
+        kaueBtn = findViewById(R.id.card2);
+        daniloBtn = findViewById(R.id.card3);
+        projectGithub = findViewById(R.id.cardGithub);
+        blurLayout = findViewById(R.id.blurLayout);
+    }
+    protected void setIntent() {
+        intentPedro = new Intent(this, PedroActivity.class);
+        intentKaue = new Intent(this, KaueActivity.class);
+        intentDanilo = new Intent(this, DaniloActivity.class);
+    }
+    protected void setUI() {
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        getWindow().setStatusBarColor(Color.TRANSPARENT);
+    }
+    protected void setOnClicks(){
+        pedroBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(intentPedro);
             }
         });
 
-        MaterialCardView kaueButton = findViewById(R.id.card2);
-
-        kaueButton.setOnClickListener(new View.OnClickListener() {
+        kaueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(intentKaue);
             }
         });
 
-        MaterialCardView daniloButton = findViewById(R.id.card3);
-
-        daniloButton.setOnClickListener(new View.OnClickListener() {
+        daniloBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(intentDanilo);
             }
         });
-
-        blurLayout = findViewById(R.id.blurLayout);
-        MaterialCardView projectGithub = findViewById(R.id.cardGithub);
 
         projectGithub.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

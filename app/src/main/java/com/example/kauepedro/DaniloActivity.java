@@ -21,6 +21,7 @@ import com.google.android.material.card.MaterialCardView;
 
 public class DaniloActivity extends AppCompatActivity {
 
+    ImageView arrowBack;
     MaterialCardView fotoDanilo;
     MediaPlayer mediaPlayer;
 
@@ -30,6 +31,8 @@ public class DaniloActivity extends AppCompatActivity {
         setContentView(R.layout.activity_danilo);
         setSoundState();
         playSound();
+
+        arrowBack = findViewById(R.id.arrowback);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -41,7 +44,7 @@ public class DaniloActivity extends AppCompatActivity {
 
         Animation imgAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
         Animation arrowAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.arrow_anim);
-        ImageView arrowBack = findViewById(R.id.arrowback);
+
 
         arrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
