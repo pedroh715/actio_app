@@ -8,11 +8,13 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.google.android.material.card.MaterialCardView;
@@ -23,6 +25,7 @@ public class KaueActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     ImageView arrowBack;
     Intent intentKaue;
+    TextView bioKaue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,8 @@ public class KaueActivity extends AppCompatActivity {
         setContentView(R.layout.activity_kaue);
         playSound();
         setSoundState();
+        bioKaue = findViewById(R.id.bioKaue);
+        bioKaue.setMovementMethod(new ScrollingMovementMethod());
 
         imgAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
         arrowAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.arrow_anim);

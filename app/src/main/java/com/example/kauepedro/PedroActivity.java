@@ -8,11 +8,13 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.google.android.material.card.MaterialCardView;
@@ -23,13 +25,15 @@ public class PedroActivity extends AppCompatActivity {
     MaterialCardView fotoPedro, linkPedro;
     MediaPlayer mediaPlayer;
     ImageView arrowBack;
-
+    TextView bioPedro;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedro);
         playSound();
         setSoundState();
+        bioPedro = findViewById(R.id.biopedro);
+        bioPedro.setMovementMethod(new ScrollingMovementMethod());
 
         imgAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
         arrowAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.arrow_anim);

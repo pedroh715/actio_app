@@ -167,11 +167,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/bioDanilo"
             android:layout_width="290dp"
             android:layout_height="230dp"
             android:text="@string/danilo_bio"
-            android:textSize="13sp"
+            android:textSize="14sp"
             android:gravity=""
+            android:scrollbars="none"
             android:textColor="@color/white"
             android:justificationMode="inter_word"
             app:layout_constraintBottom_toBottomOf="@id/materialCardView2"

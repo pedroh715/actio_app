@@ -168,10 +168,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/biopedro"
             android:layout_width="290dp"
             android:layout_height="230dp"
             android:text="@string/pedro_bio"
-            android:textSize="13sp"
+            android:scrollbars="none"
+            android:textSize="14sp"
             android:gravity=""
             android:textColor="@color/white"
             android:justificationMode="inter_word"
