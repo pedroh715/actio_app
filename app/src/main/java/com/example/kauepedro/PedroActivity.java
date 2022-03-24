@@ -19,8 +19,10 @@ import com.google.android.material.card.MaterialCardView;
 
 public class PedroActivity extends AppCompatActivity {
 
-    MaterialCardView fotoPedro;
+    Animation imgAnim, arrowAnim;
+    MaterialCardView fotoPedro, linkPedro;
     MediaPlayer mediaPlayer;
+    ImageView arrowBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,45 +31,12 @@ public class PedroActivity extends AppCompatActivity {
         playSound();
         setSoundState();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
-        Animation imgAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
-        Animation arrowAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.arrow_anim);
+        imgAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
+        arrowAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.arrow_anim);
 
-        fotoPedro = findViewById(R.id.materialCardView);
-
-        fotoPedro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fotoPedro.startAnimation(imgAnim);
-            }
-        });
-
-        ImageView arrowBack = findViewById(R.id.arrow_back);
-
-        arrowBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                arrowBack.startAnimation(arrowAnim);
-                mediaPlayer.stop();
-                finish();
-            }
-        });
-
-        MaterialCardView linkPedro = findViewById(R.id.pedroLink);
-
-        linkPedro.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Uri uri = Uri.parse("https://github.com/pedroh715");
-                Intent intentPedro = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intentPedro);
-            }
-        });
+        setUI();
+        setFindView();
+        setOnClicks();
     }
 
     @Override
@@ -82,6 +51,13 @@ public class PedroActivity extends AppCompatActivity {
         mediaPlayer.start();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mediaPlayer.stop();
+        finish();
+    }
+
     private void setSoundState(){
         ToggleButton button = findViewById(R.id.button_sound);
         button.setOnClickListener(new View.OnClickListener() {
@@ -93,17 +69,46 @@ public class PedroActivity extends AppCompatActivity {
             }
         });
     }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        mediaPlayer.stop();
-        finish();
-    }
-
     private void playSound() {
          mediaPlayer = MediaPlayer.create(this, R.raw.moda_casual);
          mediaPlayer.seekTo(14000);
          mediaPlayer.start();
+    }
+    private void setUI(){
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        getWindow().setStatusBarColor(Color.TRANSPARENT);
+    }
+    private void setOnClicks() {
+        fotoPedro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fotoPedro.startAnimation(imgAnim);
+            }
+        });
+
+        linkPedro.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Uri uri = Uri.parse("https://github.com/pedroh715");
+                Intent intentPedro = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intentPedro);
+            }
+        });
+
+        arrowBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                arrowBack.startAnimation(arrowAnim);
+                mediaPlayer.stop();
+                finish();
+            }
+        });
+    }
+    private void setFindView(){
+        fotoPedro = findViewById(R.id.materialCardView);
+        arrowBack = findViewById(R.id.arrow_back);
+        linkPedro = findViewById(R.id.pedroLink);
     }
 }

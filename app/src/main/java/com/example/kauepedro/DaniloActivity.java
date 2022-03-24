@@ -21,8 +21,9 @@ import com.google.android.material.card.MaterialCardView;
 
 public class DaniloActivity extends AppCompatActivity {
 
+    Animation imgAnim, arrowAnim;
     ImageView arrowBack;
-    MaterialCardView fotoDanilo;
+    MaterialCardView fotoDanilo, daniloGithub;
     MediaPlayer mediaPlayer;
 
     @Override
@@ -32,47 +33,12 @@ public class DaniloActivity extends AppCompatActivity {
         setSoundState();
         playSound();
 
-        arrowBack = findViewById(R.id.arrowback);
+        imgAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
+        arrowAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.arrow_anim);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
-
-        Animation imgAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
-        Animation arrowAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.arrow_anim);
-
-
-        arrowBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                arrowBack.startAnimation(arrowAnim);
-                mediaPlayer.stop();
-                finish();
-            }
-        });
-
-        fotoDanilo = findViewById(R.id.materialCardView);
-        fotoDanilo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fotoDanilo.startAnimation(imgAnim);
-            }
-        });
-
-        MaterialCardView daniloGithub = findViewById(R.id.githubDanilo);
-
-        daniloGithub.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Uri uri = Uri.parse("https://github.com/Danilo-Mota");
-                Intent intentDanilo = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intentDanilo);
-
-            }
-        });
+        setUI();
+        setFindView();
+        setOnClicks();
     }
 
     @Override
@@ -87,6 +53,13 @@ public class DaniloActivity extends AppCompatActivity {
         mediaPlayer.start();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mediaPlayer.stop();
+        finish();
+    }
+
     private void setSoundState(){
         ToggleButton button = findViewById(R.id.button_sound);
         button.setOnClickListener(new View.OnClickListener() {
@@ -99,18 +72,49 @@ public class DaniloActivity extends AppCompatActivity {
             }
         });
     }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        mediaPlayer.stop();
-        finish();
-    }
-
     private void playSound() {
         mediaPlayer = MediaPlayer.create(this, R.raw.musica_danilo);
         mediaPlayer.seekTo(30900);
         mediaPlayer.start();
 
+    }
+    private void setUI(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
+    }
+    private void setOnClicks(){
+        fotoDanilo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fotoDanilo.startAnimation(imgAnim);
+            }
+        });
+
+        daniloGithub.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Uri uri = Uri.parse("https://github.com/Danilo-Mota");
+                Intent intentDanilo = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intentDanilo);
+            }
+        });
+
+        arrowBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                arrowBack.startAnimation(arrowAnim);
+                mediaPlayer.stop();
+                finish();
+            }
+        });
+    }
+    private void setFindView(){
+        arrowBack = findViewById(R.id.arrowback);
+        fotoDanilo = findViewById(R.id.materialCardView);
+        daniloGithub = findViewById(R.id.githubDanilo);
     }
 }
