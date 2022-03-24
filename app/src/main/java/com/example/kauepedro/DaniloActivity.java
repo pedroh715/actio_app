@@ -10,6 +10,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -19,6 +21,7 @@ import com.google.android.material.card.MaterialCardView;
 
 public class DaniloActivity extends AppCompatActivity {
 
+    MaterialCardView fotoDanilo;
     MediaPlayer mediaPlayer;
 
     @Override
@@ -36,16 +39,26 @@ public class DaniloActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
 
+        Animation imgAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
+        Animation arrowAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.arrow_anim);
         ImageView arrowBack = findViewById(R.id.arrowback);
 
         arrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                arrowBack.startAnimation(arrowAnim);
                 mediaPlayer.stop();
                 finish();
             }
         });
 
+        fotoDanilo = findViewById(R.id.materialCardView);
+        fotoDanilo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fotoDanilo.startAnimation(imgAnim);
+            }
+        });
 
         MaterialCardView daniloGithub = findViewById(R.id.githubDanilo);
 

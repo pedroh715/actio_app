@@ -10,13 +10,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
 
 import com.google.android.material.card.MaterialCardView;
 
 public class KaueActivity extends AppCompatActivity {
-
+    MaterialCardView fotoKaue;
     MediaPlayer mediaPlayer;
 
     @Override
@@ -25,6 +27,17 @@ public class KaueActivity extends AppCompatActivity {
         setContentView(R.layout.activity_kaue);
         setSoundState();
         playSound();
+
+        Animation imgAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
+        Animation arrowAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.arrow_anim);
+        fotoKaue = findViewById(R.id.materialCardView);
+
+        fotoKaue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fotoKaue.startAnimation(imgAnim);
+            }
+        });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -39,6 +52,7 @@ public class KaueActivity extends AppCompatActivity {
         arrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                arrowBack.startAnimation(arrowAnim);
                 mediaPlayer.stop();
                 finish();
             }

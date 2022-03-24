@@ -93,12 +93,20 @@
             android:id="@+id/blurLayout2"
             android:layout_width="93dp"
             android:layout_height="200dp"
-            app:blk_blurRadius="8"
+            app:blk_blurRadius="3"
             app:blk_fps="0"
             app:layout_constraintBottom_toBottomOf="@+id/kaueLink"
             app:layout_constraintEnd_toEndOf="@+id/kaueLink"
             app:layout_constraintStart_toStartOf="@+id/kaueLink" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_github_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/blurLayout2"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout2"
+            app:layout_constraintTop_toTopOf="@+id/blurLayout2" />
 
 
 
@@ -112,17 +120,17 @@
             app:cardBackgroundColor="@color/transparent"
             app:cardCornerRadius="15dp"
             app:cardElevation="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/materialCardView2"
+            app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/materialCardView"
-            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            app:layout_constraintTop_toTopOf="@+id/materialCardView"
             app:strokeWidth="1dp"></com.google.android.material.card.MaterialCardView>
 
         <io.alterac.blurkit.BlurLayout
             android:id="@+id/blurLayout"
             android:layout_width="310dp"
             android:layout_height="250dp"
-            app:blk_blurRadius="8"
+            app:blk_blurRadius="3"
             app:blk_fps="0"
             app:layout_constraintBottom_toBottomOf="@+id/materialCardView2"
             app:layout_constraintEnd_toEndOf="@+id/materialCardView2"
@@ -154,6 +162,19 @@
             android:layout_marginTop="70dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="290dp"
+            android:layout_height="230dp"
+            android:text="@string/kaue_bio"
+            android:textSize="12.5sp"
+            android:gravity=""
+            android:textColor="@color/white"
+            android:justificationMode="inter_word"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout"
+            app:layout_constraintEnd_toEndOf="@id/blurLayout"
+            app:layout_constraintStart_toStartOf="@id/blurLayout"
+            app:layout_constraintTop_toTopOf="@id/blurLayout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

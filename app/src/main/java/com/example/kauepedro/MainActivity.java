@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -22,13 +23,17 @@ import io.alterac.blurkit.BlurLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView actioLogo, ativMobile;
     private BlurLayout blurLayout;
     private MaterialCardView pedroButton;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        actioLogo = findViewById(R.id.textView2);
+        ativMobile = findViewById(R.id.ativMobile);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -70,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         blurLayout = findViewById(R.id.blurLayout);
-
         MaterialCardView projectGithub = findViewById(R.id.cardGithub);
 
         projectGithub.setOnClickListener(new View.OnClickListener() {

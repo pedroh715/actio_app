@@ -10,6 +10,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
 
@@ -17,6 +19,7 @@ import com.google.android.material.card.MaterialCardView;
 
 public class PedroActivity extends AppCompatActivity {
 
+    MaterialCardView fotoPedro;
     MediaPlayer mediaPlayer;
 
     @Override
@@ -33,12 +36,24 @@ public class PedroActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
+        Animation imgAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
+        Animation arrowAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.arrow_anim);
+
+        fotoPedro = findViewById(R.id.materialCardView);
+
+        fotoPedro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fotoPedro.startAnimation(imgAnim);
+            }
+        });
 
         ImageView arrowBack = findViewById(R.id.arrow_back);
 
         arrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                arrowBack.startAnimation(arrowAnim);
                 mediaPlayer.stop();
                 finish();
             }
